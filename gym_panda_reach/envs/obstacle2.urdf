@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<robot name="obstacle2">
+  <link name="baseLink">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>  <!-- 调整xyz属性来放置障碍物在桌子的中间 -->
+      <geometry>
+        <cylinder radius="0.04" length="0.08"/>  <!-- 调整radius和length属性来定义圆柱体的大小 -->
+      </geometry>
+      <material name="green">
+        <color rgba="0.9 0.1 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+</robot>

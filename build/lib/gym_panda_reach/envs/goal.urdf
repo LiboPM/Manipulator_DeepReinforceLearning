@@ -8,7 +8,7 @@
 				<sphere radius="0.025"/>
       </geometry>
        <material name="red">
-        <color rgba="0.1 0.9 0.0 1"/>
+        <color rgba="0.9 0.0 0.0 1"/>
       </material>
     </visual>
 

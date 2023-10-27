@@ -173,9 +173,8 @@ class PandaEnv(gym.Env):
             basePosition=[0.65, 0, 0.0],
             useFixedBase=True,
         )
-        
 
-        #trayUid = p.loadURDF(os.path.join(urdfRootPath, "tray/traybox.urdf"),basePosition=[0.65,0,0])
+        # trayUid = p.loadURDF(os.path.join(urdfRootPath, "tray/traybox.urdf"),basePosition=[0.65,0,0])
 
         p.addUserDebugLine(
             [-1, 0, 0.05],
@@ -205,27 +204,11 @@ class PandaEnv(gym.Env):
             random.uniform(0.65 + 0.0, 0.65 + 0.2),
         ]
         #         self.objectUid = p.loadURDF(os.path.join(urdfRootPath, "random_urdfs/000/000.urdf"), basePosition=state_object)
-        state_goal = [0.7, 0.2, 0.625]  # 设置目标的位置，可以根据实际情况调整
-        state_obstacle = [0.7, 0.25, 0.75]  # 设置障碍物的位置，可以根据实际情况调整
-        state_obstacle2 = [0.7, -0.25, 0.75]
-
         self.objectUid = p.loadURDF(
             os.path.join(dir_path, "goal.urdf"),
             basePosition=state_object,
             useFixedBase=True,
         )
-        #obstacle
-        self.obstacleUid = p.loadURDF(
-            os.path.join(dir_path, "obstacle.urdf"),
-            basePosition=state_obstacle,
-            useFixedBase=True,
-        )
-        self.obstacleUid = p.loadURDF(
-            os.path.join(dir_path, "obstacle2.urdf"),
-            basePosition=state_obstacle2,
-            useFixedBase=True,
-        )
-
         state_robot = p.getLinkState(self.pandaUid, 11)[0]
         state_fingers = (
             p.getJointState(self.pandaUid, 9)[0],
